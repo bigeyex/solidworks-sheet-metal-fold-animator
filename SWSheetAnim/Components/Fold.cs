@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SWSheetAnim.Components
 {
+    [Serializable()]
     public class Fold
     {
         public string PartName;

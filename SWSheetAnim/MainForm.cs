@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SWSheetAnim.Components;
 using SWSheetAnim.Systems;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SWSheetAnim
 {
@@ -83,6 +86,7 @@ namespace SWSheetAnim
         {
             foldTab.Visible = false;
             moveTab.Visible = false;
+            cameraTab.Visible = false;
             tab.Visible = true;
         }
 
@@ -105,6 +109,12 @@ namespace SWSheetAnim
                 BindControl(moveDurationTxt, "Text", currentStep, "Duration");
                 BindControl(moveWaitTxt, "Text", currentStep, "WaitTime");
                 BindStepControls(step);
+            }
+            else if(currentStep is CameraStep)
+            {
+                ShowTab(cameraTab);
+                BindControl(cameraDurationTxt, "Text", currentStep, "Duration");
+                BindControl(cameraWaitTxt, "Text", currentStep, "WaitTime");
             }
         }
 
@@ -201,6 +211,91 @@ namespace SWSheetAnim
             PartSystem ps = new PartSystem(step.Part);
             ps.SetTransform(step.EndTransform);
             ps.RefreshScene();
+        }
+
+        private void cameraStartLoadBtn_Click(object sender, EventArgs e)
+        {
+            CameraStep step = (CameraStep)stepListBox.SelectedItem;
+            step.StartPosition = SWEngine.Instance.GetCameraPosition();
+            SWEngine.Instance.RefreshView();
+        }
+
+        private void cameraStartSetBtn_Click(object sender, EventArgs e)
+        {
+            CameraStep step = (CameraStep)stepListBox.SelectedItem;
+            SWEngine.Instance.SetCameraPosition(step.StartPosition);
+            SWEngine.Instance.RefreshView();
+        }
+
+        private void cameraEndLoadBtn_Click(object sender, EventArgs e)
+        {
+            CameraStep step = (CameraStep)stepListBox.SelectedItem;
+            step.EndPosition = SWEngine.Instance.GetCameraPosition();
+            SWEngine.Instance.RefreshView();
+        }
+
+        private void cameraEndSetBtn_Click(object sender, EventArgs e)
+        {
+            CameraStep step = (CameraStep)stepListBox.SelectedItem;
+            SWEngine.Instance.SetCameraPosition(step.EndPosition);
+            SWEngine.Instance.RefreshView();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            CameraStep cs = new CameraStep();
+            cs.StartPosition = SWEngine.Instance.GetCameraPosition();
+            cs.EndPosition = SWEngine.Instance.GetCameraPosition();
+            cs.WaitTime = 0;
+            cs.Duration = 0.01; // 第一帧一定是初始位置
+            cs.Name = "设置镜头初始位置";
+            AddStep(cs);
+        }
+
+        private void saveProjectBtn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "折纸动画项目|*.mkfold";
+            saveFileDialog1.Title = "保存项目";
+            Stream stream;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((stream = saveFileDialog1.OpenFile()) != null)
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, StepList);
+                    stream.Close();
+                }
+            }
+        }
+
+        private void loadProjectBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog loadFileDialog1 = new OpenFileDialog();
+            loadFileDialog1.Filter = "折纸动画项目|*.mkfold";
+            loadFileDialog1.Title = "打开项目";
+            Stream stream;
+
+            if (loadFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((stream = loadFileDialog1.OpenFile()) != null)
+                    {
+                        using (stream)
+                        {
+                            BinaryFormatter formatter = new BinaryFormatter();
+                            StepList = (BindingList<IStep>)formatter.Deserialize(stream);
+                            stepListBox.DataSource = StepList;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
     }
 }

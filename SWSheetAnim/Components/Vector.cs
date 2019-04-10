@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SWSheetAnim.Components
 {
-    class Vector
+    [Serializable()]
+    public class Vector
     {
         public double X { get; set; } = 0;
         public double Y { get; set; } = 0;

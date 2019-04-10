@@ -83,24 +83,38 @@
             this.labelStart = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.cameraTab = new System.Windows.Forms.GroupBox();
+            this.cameraWaitTxt = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cameraEndLoadBtn = new System.Windows.Forms.Button();
+            this.cameraStartLoadBtn = new System.Windows.Forms.Button();
+            this.cameraEndSetBtn = new System.Windows.Forms.Button();
+            this.cameraStartSetBtn = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cameraDurationTxt = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.saveProjectBtn = new System.Windows.Forms.Button();
+            this.loadProjectBtn = new System.Windows.Forms.Button();
             this.foldTab.SuspendLayout();
             this.moveTab.SuspendLayout();
+            this.cameraTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 38);
+            this.label1.Location = new System.Drawing.Point(33, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
+            this.label1.Size = new System.Drawing.Size(70, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "步骤";
+            this.label1.Text = "Steps";
             // 
             // stepListBox
             // 
             this.stepListBox.FormattingEnabled = true;
             this.stepListBox.ItemHeight = 24;
-            this.stepListBox.Location = new System.Drawing.Point(45, 76);
+            this.stepListBox.Location = new System.Drawing.Point(37, 136);
             this.stepListBox.Name = "stepListBox";
             this.stepListBox.Size = new System.Drawing.Size(350, 388);
             this.stepListBox.TabIndex = 1;
@@ -108,11 +122,11 @@
             // 
             // newStepBtn
             // 
-            this.newStepBtn.Location = new System.Drawing.Point(45, 471);
+            this.newStepBtn.Location = new System.Drawing.Point(37, 531);
             this.newStepBtn.Name = "newStepBtn";
             this.newStepBtn.Size = new System.Drawing.Size(83, 43);
             this.newStepBtn.TabIndex = 2;
-            this.newStepBtn.Text = "新增";
+            this.newStepBtn.Text = "Add";
             this.newStepBtn.UseVisualStyleBackColor = true;
             this.newStepBtn.Click += new System.EventHandler(this.newStepBtn_Click);
             // 
@@ -129,16 +143,16 @@
             this.foldTab.Controls.Add(this.foldStartTxt);
             this.foldTab.Controls.Add(this.foldDurationTxt);
             this.foldTab.Controls.Add(this.label2);
-            this.foldTab.Location = new System.Drawing.Point(427, 38);
+            this.foldTab.Location = new System.Drawing.Point(419, 98);
             this.foldTab.Name = "foldTab";
             this.foldTab.Size = new System.Drawing.Size(478, 426);
             this.foldTab.TabIndex = 3;
             this.foldTab.TabStop = false;
-            this.foldTab.Text = "折叠步骤";
+            this.foldTab.Text = "Fold";
             // 
             // foldWaitTxt
             // 
-            this.foldWaitTxt.Location = new System.Drawing.Point(141, 90);
+            this.foldWaitTxt.Location = new System.Drawing.Point(178, 90);
             this.foldWaitTxt.Name = "foldWaitTxt";
             this.foldWaitTxt.Size = new System.Drawing.Size(168, 35);
             this.foldWaitTxt.TabIndex = 6;
@@ -147,11 +161,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 93);
+            this.label5.Location = new System.Drawing.Point(78, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 24);
             this.label5.TabIndex = 5;
-            this.label5.Text = "等待(s)";
+            this.label5.Text = "Wait(s)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // foldRepeatChk
@@ -159,28 +173,28 @@
             this.foldRepeatChk.AutoSize = true;
             this.foldRepeatChk.Location = new System.Drawing.Point(141, 255);
             this.foldRepeatChk.Name = "foldRepeatChk";
-            this.foldRepeatChk.Size = new System.Drawing.Size(90, 28);
+            this.foldRepeatChk.Size = new System.Drawing.Size(114, 28);
             this.foldRepeatChk.TabIndex = 4;
-            this.foldRepeatChk.Text = "压痕";
+            this.foldRepeatChk.Text = "Crease";
             this.foldRepeatChk.UseVisualStyleBackColor = true;
             // 
             // foldSetEndBtn
             // 
-            this.foldSetEndBtn.Location = new System.Drawing.Point(324, 200);
+            this.foldSetEndBtn.Location = new System.Drawing.Point(349, 202);
             this.foldSetEndBtn.Name = "foldSetEndBtn";
             this.foldSetEndBtn.Size = new System.Drawing.Size(68, 34);
             this.foldSetEndBtn.TabIndex = 3;
-            this.foldSetEndBtn.Text = "设";
+            this.foldSetEndBtn.Text = "Set";
             this.foldSetEndBtn.UseVisualStyleBackColor = true;
             this.foldSetEndBtn.Click += new System.EventHandler(this.foldSetEndBtn_Click);
             // 
             // foldSetStartBtn
             // 
-            this.foldSetStartBtn.Location = new System.Drawing.Point(324, 156);
+            this.foldSetStartBtn.Location = new System.Drawing.Point(349, 158);
             this.foldSetStartBtn.Name = "foldSetStartBtn";
             this.foldSetStartBtn.Size = new System.Drawing.Size(68, 34);
             this.foldSetStartBtn.TabIndex = 3;
-            this.foldSetStartBtn.Text = "设";
+            this.foldSetStartBtn.Text = "Set";
             this.foldSetStartBtn.UseVisualStyleBackColor = true;
             this.foldSetStartBtn.Click += new System.EventHandler(this.foldSetStartBtn_Click);
             // 
@@ -189,24 +203,24 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(29, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 24);
+            this.label4.Size = new System.Drawing.Size(118, 24);
             this.label4.TabIndex = 2;
-            this.label4.Text = "结束角度";
+            this.label4.Text = "End Angle";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 159);
+            this.label3.Location = new System.Drawing.Point(6, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 24);
+            this.label3.Size = new System.Drawing.Size(142, 24);
             this.label3.TabIndex = 2;
-            this.label3.Text = "起始角度";
+            this.label3.Text = "Start Angle";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // foldEndTxt
             // 
-            this.foldEndTxt.Location = new System.Drawing.Point(141, 199);
+            this.foldEndTxt.Location = new System.Drawing.Point(166, 201);
             this.foldEndTxt.Name = "foldEndTxt";
             this.foldEndTxt.Size = new System.Drawing.Size(168, 35);
             this.foldEndTxt.TabIndex = 1;
@@ -214,7 +228,7 @@
             // 
             // foldStartTxt
             // 
-            this.foldStartTxt.Location = new System.Drawing.Point(141, 156);
+            this.foldStartTxt.Location = new System.Drawing.Point(166, 158);
             this.foldStartTxt.Name = "foldStartTxt";
             this.foldStartTxt.Size = new System.Drawing.Size(168, 35);
             this.foldStartTxt.TabIndex = 1;
@@ -222,7 +236,7 @@
             // 
             // foldDurationTxt
             // 
-            this.foldDurationTxt.Location = new System.Drawing.Point(141, 49);
+            this.foldDurationTxt.Location = new System.Drawing.Point(178, 49);
             this.foldDurationTxt.Name = "foldDurationTxt";
             this.foldDurationTxt.Size = new System.Drawing.Size(168, 35);
             this.foldDurationTxt.TabIndex = 1;
@@ -233,23 +247,23 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(41, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.Size = new System.Drawing.Size(142, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "时长(s)";
+            this.label2.Text = "Duration(s)";
             // 
             // videoOutputBtn
             // 
-            this.videoOutputBtn.Location = new System.Drawing.Point(770, 471);
+            this.videoOutputBtn.Location = new System.Drawing.Point(688, 531);
             this.videoOutputBtn.Name = "videoOutputBtn";
-            this.videoOutputBtn.Size = new System.Drawing.Size(135, 43);
+            this.videoOutputBtn.Size = new System.Drawing.Size(209, 43);
             this.videoOutputBtn.TabIndex = 2;
-            this.videoOutputBtn.Text = "视频输出";
+            this.videoOutputBtn.Text = "Export Video";
             this.videoOutputBtn.UseVisualStyleBackColor = true;
             this.videoOutputBtn.Click += new System.EventHandler(this.videoOutputBtn_Click);
             // 
             // videoOutputProgress
             // 
-            this.videoOutputProgress.Location = new System.Drawing.Point(598, 471);
+            this.videoOutputProgress.Location = new System.Drawing.Point(525, 530);
             this.videoOutputProgress.Name = "videoOutputProgress";
             this.videoOutputProgress.Size = new System.Drawing.Size(157, 43);
             this.videoOutputProgress.TabIndex = 4;
@@ -257,31 +271,31 @@
             // 
             // delStepBtn
             // 
-            this.delStepBtn.Location = new System.Drawing.Point(134, 470);
+            this.delStepBtn.Location = new System.Drawing.Point(126, 530);
             this.delStepBtn.Name = "delStepBtn";
             this.delStepBtn.Size = new System.Drawing.Size(83, 43);
             this.delStepBtn.TabIndex = 2;
-            this.delStepBtn.Text = "删除";
+            this.delStepBtn.Text = "Del";
             this.delStepBtn.UseVisualStyleBackColor = true;
             this.delStepBtn.Click += new System.EventHandler(this.delStepBtn_Click);
             // 
             // upStepBtn
             // 
-            this.upStepBtn.Location = new System.Drawing.Point(223, 470);
+            this.upStepBtn.Location = new System.Drawing.Point(215, 530);
             this.upStepBtn.Name = "upStepBtn";
             this.upStepBtn.Size = new System.Drawing.Size(83, 43);
             this.upStepBtn.TabIndex = 2;
-            this.upStepBtn.Text = "上移";
+            this.upStepBtn.Text = "Up";
             this.upStepBtn.UseVisualStyleBackColor = true;
             this.upStepBtn.Click += new System.EventHandler(this.upStepBtn_Click);
             // 
             // downStepBtn
             // 
-            this.downStepBtn.Location = new System.Drawing.Point(312, 471);
+            this.downStepBtn.Location = new System.Drawing.Point(304, 531);
             this.downStepBtn.Name = "downStepBtn";
             this.downStepBtn.Size = new System.Drawing.Size(83, 43);
             this.downStepBtn.TabIndex = 2;
-            this.downStepBtn.Text = "下移";
+            this.downStepBtn.Text = "Down";
             this.downStepBtn.UseVisualStyleBackColor = true;
             this.downStepBtn.Click += new System.EventHandler(this.downStepBtn_Click);
             // 
@@ -321,12 +335,12 @@
             this.moveTab.Controls.Add(this.labelStart);
             this.moveTab.Controls.Add(this.label10);
             this.moveTab.Controls.Add(this.label9);
-            this.moveTab.Location = new System.Drawing.Point(427, 38);
+            this.moveTab.Location = new System.Drawing.Point(419, 98);
             this.moveTab.Name = "moveTab";
             this.moveTab.Size = new System.Drawing.Size(478, 426);
             this.moveTab.TabIndex = 5;
             this.moveTab.TabStop = false;
-            this.moveTab.Text = "移动步骤";
+            this.moveTab.Text = "Move Part";
             // 
             // moveEndSetBtn
             // 
@@ -334,7 +348,7 @@
             this.moveEndSetBtn.Name = "moveEndSetBtn";
             this.moveEndSetBtn.Size = new System.Drawing.Size(74, 41);
             this.moveEndSetBtn.TabIndex = 7;
-            this.moveEndSetBtn.Text = "设置";
+            this.moveEndSetBtn.Text = "Set";
             this.moveEndSetBtn.UseVisualStyleBackColor = true;
             this.moveEndSetBtn.Click += new System.EventHandler(this.moveEndSetBtn_Click);
             // 
@@ -344,7 +358,7 @@
             this.moveStartSetBtn.Name = "moveStartSetBtn";
             this.moveStartSetBtn.Size = new System.Drawing.Size(74, 41);
             this.moveStartSetBtn.TabIndex = 7;
-            this.moveStartSetBtn.Text = "设置";
+            this.moveStartSetBtn.Text = "Set";
             this.moveStartSetBtn.UseVisualStyleBackColor = true;
             this.moveStartSetBtn.Click += new System.EventHandler(this.moveStartSetBtn_Click);
             // 
@@ -354,7 +368,7 @@
             this.moveEndLoadBtn.Name = "moveEndLoadBtn";
             this.moveEndLoadBtn.Size = new System.Drawing.Size(74, 41);
             this.moveEndLoadBtn.TabIndex = 7;
-            this.moveEndLoadBtn.Text = "读取";
+            this.moveEndLoadBtn.Text = "Load";
             this.moveEndLoadBtn.UseVisualStyleBackColor = true;
             this.moveEndLoadBtn.Click += new System.EventHandler(this.moveEndLoadBtn_Click);
             // 
@@ -364,7 +378,7 @@
             this.moveStartLoadBtn.Name = "moveStartLoadBtn";
             this.moveStartLoadBtn.Size = new System.Drawing.Size(74, 41);
             this.moveStartLoadBtn.TabIndex = 7;
-            this.moveStartLoadBtn.Text = "读取";
+            this.moveStartLoadBtn.Text = "Load";
             this.moveStartLoadBtn.UseVisualStyleBackColor = true;
             this.moveStartLoadBtn.Click += new System.EventHandler(this.moveStartLoadBtn_Click);
             // 
@@ -383,7 +397,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 24);
             this.label6.TabIndex = 5;
-            this.label6.Text = "等待(s)";
+            this.label6.Text = "Wait(s)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // moveEndZTxt
@@ -501,7 +515,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(58, 24);
             this.label19.TabIndex = 0;
-            this.label19.Text = "翻滚";
+            this.label19.Text = "Roll";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // moveStartPitchTxt
@@ -529,7 +543,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 24);
             this.label13.TabIndex = 0;
-            this.label13.Text = "翻滚";
+            this.label13.Text = "Roll";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
@@ -547,9 +561,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(164, 376);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 24);
+            this.label17.Size = new System.Drawing.Size(46, 24);
             this.label17.TabIndex = 0;
-            this.label17.Text = "偏航";
+            this.label17.Text = "Yaw";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // moveDurationTxt
@@ -575,9 +589,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(164, 232);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 24);
+            this.label12.Size = new System.Drawing.Size(46, 24);
             this.label12.TabIndex = 0;
-            this.label12.Text = "偏航";
+            this.label12.Text = "Yaw";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
@@ -585,9 +599,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 289);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 24);
+            this.label15.Size = new System.Drawing.Size(58, 24);
             this.label15.TabIndex = 0;
-            this.label15.Text = "结束:";
+            this.label15.Text = "End:";
             // 
             // label7
             // 
@@ -604,9 +618,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 376);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 24);
+            this.label8.Size = new System.Drawing.Size(46, 24);
             this.label8.TabIndex = 0;
-            this.label8.Text = "俯仰";
+            this.label8.Text = "Pan";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelStart
@@ -614,37 +628,174 @@
             this.labelStart.AutoSize = true;
             this.labelStart.Location = new System.Drawing.Point(6, 145);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(70, 24);
+            this.labelStart.Size = new System.Drawing.Size(82, 24);
             this.labelStart.TabIndex = 0;
-            this.labelStart.Text = "开始:";
+            this.labelStart.Text = "Start:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 232);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 24);
+            this.label10.Size = new System.Drawing.Size(46, 24);
             this.label10.TabIndex = 0;
-            this.label10.Text = "俯仰";
+            this.label10.Text = "Pan";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(41, 52);
+            this.label9.Location = new System.Drawing.Point(-6, 52);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 24);
+            this.label9.Size = new System.Drawing.Size(142, 24);
             this.label9.TabIndex = 0;
-            this.label9.Text = "时长(s)";
+            this.label9.Text = "Duration(s)";
+            // 
+            // cameraTab
+            // 
+            this.cameraTab.Controls.Add(this.cameraWaitTxt);
+            this.cameraTab.Controls.Add(this.label21);
+            this.cameraTab.Controls.Add(this.cameraEndLoadBtn);
+            this.cameraTab.Controls.Add(this.cameraStartLoadBtn);
+            this.cameraTab.Controls.Add(this.cameraEndSetBtn);
+            this.cameraTab.Controls.Add(this.cameraStartSetBtn);
+            this.cameraTab.Controls.Add(this.label22);
+            this.cameraTab.Controls.Add(this.label23);
+            this.cameraTab.Controls.Add(this.cameraDurationTxt);
+            this.cameraTab.Controls.Add(this.label24);
+            this.cameraTab.Location = new System.Drawing.Point(419, 98);
+            this.cameraTab.Name = "cameraTab";
+            this.cameraTab.Size = new System.Drawing.Size(478, 426);
+            this.cameraTab.TabIndex = 7;
+            this.cameraTab.TabStop = false;
+            this.cameraTab.Text = "Camera Movement";
+            // 
+            // cameraWaitTxt
+            // 
+            this.cameraWaitTxt.Location = new System.Drawing.Point(141, 90);
+            this.cameraWaitTxt.Name = "cameraWaitTxt";
+            this.cameraWaitTxt.Size = new System.Drawing.Size(168, 35);
+            this.cameraWaitTxt.TabIndex = 6;
+            this.cameraWaitTxt.Text = "0.3";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(54, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 24);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Wait(s)";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cameraEndLoadBtn
+            // 
+            this.cameraEndLoadBtn.Location = new System.Drawing.Point(192, 199);
+            this.cameraEndLoadBtn.Name = "cameraEndLoadBtn";
+            this.cameraEndLoadBtn.Size = new System.Drawing.Size(104, 34);
+            this.cameraEndLoadBtn.TabIndex = 3;
+            this.cameraEndLoadBtn.Text = "Load";
+            this.cameraEndLoadBtn.UseVisualStyleBackColor = true;
+            this.cameraEndLoadBtn.Click += new System.EventHandler(this.cameraEndLoadBtn_Click);
+            // 
+            // cameraStartLoadBtn
+            // 
+            this.cameraStartLoadBtn.Location = new System.Drawing.Point(192, 156);
+            this.cameraStartLoadBtn.Name = "cameraStartLoadBtn";
+            this.cameraStartLoadBtn.Size = new System.Drawing.Size(104, 34);
+            this.cameraStartLoadBtn.TabIndex = 3;
+            this.cameraStartLoadBtn.Text = "Load";
+            this.cameraStartLoadBtn.UseVisualStyleBackColor = true;
+            this.cameraStartLoadBtn.Click += new System.EventHandler(this.cameraStartLoadBtn_Click);
+            // 
+            // cameraEndSetBtn
+            // 
+            this.cameraEndSetBtn.Location = new System.Drawing.Point(302, 198);
+            this.cameraEndSetBtn.Name = "cameraEndSetBtn";
+            this.cameraEndSetBtn.Size = new System.Drawing.Size(104, 34);
+            this.cameraEndSetBtn.TabIndex = 3;
+            this.cameraEndSetBtn.Text = "Set";
+            this.cameraEndSetBtn.UseVisualStyleBackColor = true;
+            this.cameraEndSetBtn.Click += new System.EventHandler(this.cameraEndSetBtn_Click);
+            // 
+            // cameraStartSetBtn
+            // 
+            this.cameraStartSetBtn.Location = new System.Drawing.Point(302, 155);
+            this.cameraStartSetBtn.Name = "cameraStartSetBtn";
+            this.cameraStartSetBtn.Size = new System.Drawing.Size(104, 34);
+            this.cameraStartSetBtn.TabIndex = 3;
+            this.cameraStartSetBtn.Text = "Set";
+            this.cameraStartSetBtn.UseVisualStyleBackColor = true;
+            this.cameraStartSetBtn.Click += new System.EventHandler(this.cameraStartSetBtn_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(32, 202);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(154, 24);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "End Location";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(8, 161);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(178, 24);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Start Location";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cameraDurationTxt
+            // 
+            this.cameraDurationTxt.Location = new System.Drawing.Point(141, 49);
+            this.cameraDurationTxt.Name = "cameraDurationTxt";
+            this.cameraDurationTxt.Size = new System.Drawing.Size(168, 35);
+            this.cameraDurationTxt.TabIndex = 1;
+            this.cameraDurationTxt.Text = "0.3";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 52);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(142, 24);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Duration(s)";
+            // 
+            // saveProjectBtn
+            // 
+            this.saveProjectBtn.Location = new System.Drawing.Point(37, 25);
+            this.saveProjectBtn.Name = "saveProjectBtn";
+            this.saveProjectBtn.Size = new System.Drawing.Size(194, 43);
+            this.saveProjectBtn.TabIndex = 2;
+            this.saveProjectBtn.Text = "Save Project";
+            this.saveProjectBtn.UseVisualStyleBackColor = true;
+            this.saveProjectBtn.Click += new System.EventHandler(this.saveProjectBtn_Click);
+            // 
+            // loadProjectBtn
+            // 
+            this.loadProjectBtn.Location = new System.Drawing.Point(237, 25);
+            this.loadProjectBtn.Name = "loadProjectBtn";
+            this.loadProjectBtn.Size = new System.Drawing.Size(210, 43);
+            this.loadProjectBtn.TabIndex = 2;
+            this.loadProjectBtn.Text = "Load Project";
+            this.loadProjectBtn.UseVisualStyleBackColor = true;
+            this.loadProjectBtn.Click += new System.EventHandler(this.loadProjectBtn_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 547);
-            this.Controls.Add(this.moveTab);
-            this.Controls.Add(this.videoOutputProgress);
+            this.ClientSize = new System.Drawing.Size(936, 615);
             this.Controls.Add(this.foldTab);
+            this.Controls.Add(this.moveTab);
+            this.Controls.Add(this.cameraTab);
+            this.Controls.Add(this.videoOutputProgress);
+            this.Controls.Add(this.loadProjectBtn);
+            this.Controls.Add(this.saveProjectBtn);
             this.Controls.Add(this.videoOutputBtn);
             this.Controls.Add(this.downStepBtn);
             this.Controls.Add(this.upStepBtn);
@@ -654,12 +805,15 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
-            this.Text = "MK Solidworks动画控制台";
+            this.Text = "Folding Animation Designer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.foldTab.ResumeLayout(false);
             this.foldTab.PerformLayout();
             this.moveTab.ResumeLayout(false);
             this.moveTab.PerformLayout();
+            this.cameraTab.ResumeLayout(false);
+            this.cameraTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -722,6 +876,19 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button moveStartLoadBtn;
+        private System.Windows.Forms.GroupBox cameraTab;
+        private System.Windows.Forms.TextBox cameraWaitTxt;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button cameraEndLoadBtn;
+        private System.Windows.Forms.Button cameraStartLoadBtn;
+        private System.Windows.Forms.Button cameraEndSetBtn;
+        private System.Windows.Forms.Button cameraStartSetBtn;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox cameraDurationTxt;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button saveProjectBtn;
+        private System.Windows.Forms.Button loadProjectBtn;
     }
 }
 

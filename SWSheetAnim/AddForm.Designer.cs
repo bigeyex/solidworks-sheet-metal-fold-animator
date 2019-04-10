@@ -36,6 +36,7 @@
             this.addFoldBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.addMoveBtn = new System.Windows.Forms.Button();
+            this.addCameraMoveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,9 +44,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(31, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
+            this.label1.Size = new System.Drawing.Size(70, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "部件";
+            this.label1.Text = "Parts";
             // 
             // partListControl
             // 
@@ -62,9 +63,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(295, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "折痕";
+            this.label2.Text = "Folds";
             // 
             // foldListControl
             // 
@@ -81,7 +82,7 @@
             this.addPreFoldBtn.Name = "addPreFoldBtn";
             this.addPreFoldBtn.Size = new System.Drawing.Size(92, 46);
             this.addPreFoldBtn.TabIndex = 2;
-            this.addPreFoldBtn.Text = "压痕";
+            this.addPreFoldBtn.Text = "Crease";
             this.addPreFoldBtn.UseVisualStyleBackColor = true;
             this.addPreFoldBtn.Click += new System.EventHandler(this.addPreFoldBtn_Click);
             // 
@@ -91,7 +92,7 @@
             this.addFoldBtn.Name = "addFoldBtn";
             this.addFoldBtn.Size = new System.Drawing.Size(92, 46);
             this.addFoldBtn.TabIndex = 2;
-            this.addFoldBtn.Text = "折叠";
+            this.addFoldBtn.Text = "Fold";
             this.addFoldBtn.UseVisualStyleBackColor = true;
             this.addFoldBtn.Click += new System.EventHandler(this.addFoldBtn_Click);
             // 
@@ -101,7 +102,7 @@
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(113, 45);
             this.refreshBtn.TabIndex = 3;
-            this.refreshBtn.Text = "刷新";
+            this.refreshBtn.Text = "Refresh";
             this.refreshBtn.UseVisualStyleBackColor = true;
             // 
             // addMoveBtn
@@ -110,9 +111,19 @@
             this.addMoveBtn.Name = "addMoveBtn";
             this.addMoveBtn.Size = new System.Drawing.Size(92, 46);
             this.addMoveBtn.TabIndex = 2;
-            this.addMoveBtn.Text = "移动";
+            this.addMoveBtn.Text = "Move";
             this.addMoveBtn.UseVisualStyleBackColor = true;
             this.addMoveBtn.Click += new System.EventHandler(this.addMoveBtn_Click);
+            // 
+            // addCameraMoveBtn
+            // 
+            this.addCameraMoveBtn.Location = new System.Drawing.Point(33, 368);
+            this.addCameraMoveBtn.Name = "addCameraMoveBtn";
+            this.addCameraMoveBtn.Size = new System.Drawing.Size(92, 46);
+            this.addCameraMoveBtn.TabIndex = 2;
+            this.addCameraMoveBtn.Text = "Camera";
+            this.addCameraMoveBtn.UseVisualStyleBackColor = true;
+            this.addCameraMoveBtn.Click += new System.EventHandler(this.addCameraMoveBtn_Click);
             // 
             // AddForm
             // 
@@ -121,6 +132,7 @@
             this.ClientSize = new System.Drawing.Size(547, 467);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.addFoldBtn);
+            this.Controls.Add(this.addCameraMoveBtn);
             this.Controls.Add(this.addMoveBtn);
             this.Controls.Add(this.addPreFoldBtn);
             this.Controls.Add(this.foldListControl);
@@ -129,7 +141,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddForm";
-            this.Text = "添加步骤";
+            this.Text = "Add a Step";
             this.Shown += new System.EventHandler(this.AddForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,5 +158,6 @@
         private System.Windows.Forms.Button addFoldBtn;
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button addMoveBtn;
+        private System.Windows.Forms.Button addCameraMoveBtn;
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SWSheetAnim.Components
 {
+    [Serializable()]
     class TransformStep : IStep
     {
         public string Name { get; set; }

@@ -46,9 +46,9 @@ namespace SWSheetAnim.Systems
                 system.SetPlaybackTime(((double)t) / 25);
                 AddSnapshot();
             }
-            system.SetPlayback(1);  // 防止最后一帧未到位
+            system.SetPlayback(1);  // set the last frame to the end position
             AddSnapshot();
-            for (int t=0; t<(int)(step.WaitTime * 25); t++)     // 录制其后的等待帧
+            for (int t=0; t<(int)(step.WaitTime * 25); t++)     // Frames for waiting
             {
                 AddSnapshot();
             }

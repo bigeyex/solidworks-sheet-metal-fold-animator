@@ -63,5 +63,14 @@ namespace SWSheetAnim
             ts.Name = "移动" + ts.Part.Name;
             MainForm.AddStep(ts);
         }
+
+        private void addCameraMoveBtn_Click(object sender, EventArgs e)
+        {
+            CameraStep cs = new CameraStep();
+            cs.StartPosition = SWEngine.Instance.GetCameraPosition();
+            cs.EndPosition = SWEngine.Instance.GetCameraPosition();
+            cs.Name = "运动镜头";
+            MainForm.AddStep(cs);
+        }
     }
 }

@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using SldWorks;
 using SwConst;
 using SWSheetAnim.Components;
-using System.Diagnostics;
 
 namespace SWSheetAnim.Systems
 {
@@ -31,10 +30,6 @@ namespace SWSheetAnim.Systems
 
             swModel = swApp.IActiveDoc2;
             asmDoc = (AssemblyDoc)swModel;
-
-            ModelView mv = swModel.ActiveView;
-            Debug.Print(mv.Translation3.ArrayData);
-            Debug.Print(mv.Orientation3.ArrayData);
         }
 
         ~SWEngine()
@@ -81,13 +76,35 @@ namespace SWSheetAnim.Systems
         public void RefreshScene()
         {
             swModel.EditRebuild3();
-            //swModel.GraphicsRedraw2();
         }
 
         public void RefreshMove()
         {
             swModel.Rebuild((int)swRebuildOptions_e.swUpdateMates);
             swModel.GraphicsRedraw2();
+        }
+
+        public void RefreshView()
+        {
+            swModel.GraphicsRedraw2();
+        }
+
+        public CameraPosition GetCameraPosition()
+        {
+            ModelView mv = swModel.ActiveView;
+            return new CameraPosition(
+                    new Vector(mv.Translation3.ArrayData),
+                    new Transform(mv.Orientation3.ArrayData),
+                    mv.Scale2
+                );
+        }
+
+        public void SetCameraPosition(CameraPosition cp)
+        {
+            ModelView mv = swModel.ActiveView;
+            mv.Translation3 = GetUtility().CreateVector(cp.Translation.ToPoints());
+            mv.Orientation3 = GetUtility().CreateTransform(cp.Orientation.ToMatrix());
+            mv.Scale2 = cp.Scale;
         }
 
         public Component2 GetComponentByName(string compName)

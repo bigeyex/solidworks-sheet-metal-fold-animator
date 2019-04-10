@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SWSheetAnim.Components
 {
-    class CameraPosition
+    [Serializable()]
+    public class CameraPosition
     {
         public Vector Translation;
         public Transform Orientation;

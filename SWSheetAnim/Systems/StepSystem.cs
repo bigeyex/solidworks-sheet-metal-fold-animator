@@ -40,9 +40,17 @@ namespace SWSheetAnim.Systems
             {
                 return new FoldStepSystem((FoldStep)step);
             }
-            else
+            else if(step is TransformStep)
             {
                 return new TransformStepSystem((TransformStep)step);
+            }
+            else if(step is CameraStep)
+            {
+                return new CameraStepSystem((CameraStep)step);
+            }
+            else
+            {
+                return null;
             }
         }
     }
